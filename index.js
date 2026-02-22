@@ -1,3 +1,5 @@
+const http = require('http');
+http.createServer((req, res) => res.end('Bot is Online')).listen(process.env.PORT || 3000);
 const { Telegraf } = require('telegraf'); 
 const fetch = require('node-fetch'); 
 const FormData = require('form-data'); 
@@ -60,4 +62,5 @@ bot.launch();
 console.log('✅ telegram-bot successfully chal raha hai...'); 
 
 process.once('SIGINT', () => bot.stop('SIGINT')); 
+
 process.once('SIGTERM', () => bot.stop('SIGTERM'));
